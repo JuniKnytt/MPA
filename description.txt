@@ -1,0 +1,49 @@
+Love playing with lots of friends? Hate fighting over items and mob grinding?
+
+
+Multiplayer Progression Assist is a crafting mod that adds in balanced crafting recipes for items that are practically
+essential for progressing in the game. The main idea is to bring in all the vanilla craftable items in Calamity,
+like craftable Hermes boots, cloud in a bottle, etc, and add them into a standalone mod with an emphasis on balancing.
+
+Big thanks to all who helped make this quality of life mod a reality.
+If you have any suggestions, would like to help, or give feedback, you can reach me at "Juni Knytt#1141"
+
+Multiplayer Progression Assist recipes:
+			-Crafting Tables Recipes-
+Skymill:		10 Sunplate Block,  2 Any Iron Bar, 1 Chain
+Evil Alter:		20 Any Evil Bars, 20 Any Evil Material, 20 Any Evil Stone, 5 Any Evil Seeds
+Leather:		5 Vertebrae
+	
+			-Anvil Recipes-
+Hermes Boots:		1 Leather, 1 Fallen star, 5 Silk, 5 Any Silver Bars
+Cloud in a Bottle: 	1 Bottle, 5 Cloud, 1 Fallen star
+Sandstorm in a Bottle:	1 Cloud in a Bottle, 5 Sturdy Fossil, 10 Sand Block
+Blizzard in a Bottle:	1 Cloud in a Bottle, 5 Ice Block, 10 Snow Block
+Anklet of the Wind:	10 Jungle Spore, 1 Any Evil Material
+Aglet:			5 Any Copper Bar
+Ice Skates:		5 Silk, 2 Leather, 2 Any Iron Bar
+Water Walking Boots:	5 Silk, 1 Leather, 1 Water-Walking Potion
+Lava Charm:		1 Chain, 5 Any Evil Material, 5 Hellstone, 1 Obsidian Skin Potion
+Flipper:		3 Silk, 1 Leather, 2 Shark Fin
+Diving Helmet:		5 Copper, 5 Shark Fin
+Cobalt Shield:		10 Any Cobalt Bar
+Magic Mirror:		1 Recall Potion, 5 Any Silver Bar, 10 Glass
+		
+			-Evil Alter Recipes-
+Fallen Star(3):		1 Mana Crystal
+
+			-Tinker's Workshop Recipes-
+Dart Trap:		5 Wire, 10 Stone, 5 Wooden Arrow
+
+			-Skymill Recipes-
+Shiney Red Balloon: 	1 String, 20 Gel, 1 Fallen star 
+Lucky Horse Shoe:	5 Any Gold Bar, 10 Sunplate Block, 1 Fallen Star
+
+			-Hardmode Anvil Recipes-
+Soul of Wight(3):	1 Soul of Sight, 1 Soul of Might, 1 Soul of Fright
+Soul of Sight:		1 Soul of Wight
+Soul of Might:		1 Soul of Wight
+Soul of Fright:		1 Soul of Wight
+Life Fruit:		1 Soul of Wight, 1 Hallowed Bar, 3 Jungle Spore
+Artificial Bulb:	5 Chlorophyte Bar, 9 Souls of Wight, 1 Life Fruit
+	
