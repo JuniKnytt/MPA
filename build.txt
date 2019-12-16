@@ -1,4 +1,4 @@
 author = Juni Knytt
-version = 0.2.0
+version = 1.1
 displayName = Multiplayer Progression Assist
-Modhomepage = https://forums.terraria.org/index.php?threads/multiplayer-progression-assist.84691/
+homepage = https://forums.terraria.org/index.php?threads/multiplayer-progression-assist.84691/

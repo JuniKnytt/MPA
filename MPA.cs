@@ -4,6 +4,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Localization;
+using static Terraria.ModLoader.ModContent;
 
 namespace MPA
 {
@@ -15,49 +16,56 @@ namespace MPA
 		}
 		public override void AddRecipeGroups()
 		{
-			RecipeGroup evilmat = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Any Evil Material", new int[]
+			RecipeGroup evilmat = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Material", new int[]
 			{
 				ItemID.ShadowScale,
 				ItemID.TissueSample
 			});
 			RecipeGroup.RegisterGroup("EvilMaterial", evilmat);
 
-			RecipeGroup evilbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Any Evil Bars", new int[]
+			RecipeGroup evilbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Bars", new int[]
 			{			
 				ItemID.DemoniteBar,
 				ItemID.CrimtaneBar
 			});
 			RecipeGroup.RegisterGroup("EvilBar", evilbar);
 
-			RecipeGroup evilseed = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Any Evil Seeds", new int[]
+			RecipeGroup evilseed = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Seeds", new int[]
 			{
 				ItemID.CorruptSeeds,
 				ItemID.CrimsonSeeds
 			});
 			RecipeGroup.RegisterGroup("EvilSeed", evilseed);
 
-			RecipeGroup silverbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Any Silver Bar", new int[]
+			RecipeGroup evilstone = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Stone", new int[]
+			{
+				ItemID.EbonstoneBlock,
+				ItemID.CrimstoneBlock
+			});
+			RecipeGroup.RegisterGroup("EvilStone", evilstone);
+
+			RecipeGroup silverbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Silver Bar", new int[]
 			{
 				ItemID.SilverBar,
 				ItemID.TungstenBar
 			});
 			RecipeGroup.RegisterGroup("SilverBar", silverbar);
 
-			RecipeGroup copperbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Any Copper Bar", new int[]
+			RecipeGroup copperbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Copper Bar", new int[]
 			{
 				ItemID.CopperBar,
 				ItemID.TinBar
 			});
 			RecipeGroup.RegisterGroup("CopperBar", copperbar);
 
-			RecipeGroup cobaltbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Any Cobalt Bar", new int[]
+			RecipeGroup cobaltbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Cobalt Bar", new int[]
 			{
 				ItemID.CobaltBar,
 				ItemID.PalladiumBar
 			});
 			RecipeGroup.RegisterGroup("CobaltBar", cobaltbar);
 
-			RecipeGroup goldbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Any Gold Bar", new int[]
+			RecipeGroup goldbar = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Gold Bar", new int[]
 			{
 				ItemID.GoldBar,
 				ItemID.PlatinumBar
@@ -222,7 +230,72 @@ namespace MPA
 			LuckyHorseshoe.AddTile(TileID.SkyMill);
 			LuckyHorseshoe.SetResult(ItemID.LuckyHorseshoe);
 			LuckyHorseshoe.AddRecipe();
+
+			//FallenStar
+			ModRecipe FallenStar = new ModRecipe(this);
+			FallenStar.AddIngredient(ItemID.ManaCrystal);
+			FallenStar.AddTile(TileID.DemonAltar);
+			FallenStar.SetResult(ItemID.FallenStar, 3);
+			FallenStar.AddRecipe();
+
+			//SoulofSight
+			ModRecipe SoulofSight = new ModRecipe(this);
+			SoulofSight.AddIngredient(this.ItemType("Soul_of_Wight"));
+			SoulofSight.AddTile(TileID.MythrilAnvil);
+			SoulofSight.SetResult(ItemID.SoulofSight);
+			SoulofSight.AddRecipe();
+
+			//SoulofMight
+			ModRecipe SoulofMight = new ModRecipe(this);
+			SoulofMight.AddIngredient(this.ItemType("Soul_of_Wight"));
+			SoulofMight.AddTile(TileID.MythrilAnvil);
+			SoulofMight.SetResult(ItemID.SoulofMight);
+			SoulofMight.AddRecipe();
+
+			//SoulofFright
+			ModRecipe SoulofFright = new ModRecipe(this);
+			SoulofFright.AddIngredient(this.ItemType("Soul_of_Wight"));
+			SoulofFright.AddTile(TileID.MythrilAnvil);
+			SoulofFright.SetResult(ItemID.SoulofFright);
+			SoulofFright.AddRecipe();
+
+			//LifeFruit
+			ModRecipe LifeFruit = new ModRecipe(this);
+			LifeFruit.AddIngredient(this.ItemType("Soul_of_Wight"), 5);
+			LifeFruit.AddIngredient(ItemID.JungleSpores, 5);
+			LifeFruit.AddTile(TileID.MythrilAnvil);
+			LifeFruit.SetResult(ItemID.LifeFruit);
+			LifeFruit.AddRecipe();
+
+
+
 		}
 
+	}
+	class MyGlobalNPC : GlobalNPC
+	{
+		public override void NPCLoot(NPC npc)
+		{
+			if (npc.type == NPCID.Plantera)
+			{
+				if (!Main.expertMode)
+					Item.NewItem(npc.getRect(), mod.ItemType("Soul_of_Wight"), Main.rand.Next(10, 21));
+
+			}
+		}
+
+		public class BossBags : GlobalItem
+		{
+				public override void OpenVanillaBag(string context, Player player, int arg)
+				{
+					// This method shows adding items to Fishrons boss bag. 
+					// Typically you'll also want to also add an item to the non-expert boss drops, that code can be found in ExampleGlobalNPC.NPCLoot. Use this and that to add drops to bosses.
+					if (context == "bossBag" && arg == ItemID.PlanteraBossBag)
+					{
+						player.QuickSpawnItem(mod.ItemType("Soul_of_Wight"), Main.rand.Next(15, 25));
+					}
+				}
+		}
+		
 	}
 }
